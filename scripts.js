@@ -1,14 +1,14 @@
 function getRandomComputerResult() {
-    const options = ["Rock", "Paper", "Scissors"];
-    return options[Math.floor(Math.random() * options.length)];
+  const options = ["Rock", "Paper", "Scissors"];
+  return options[Math.floor(Math.random() * options.length)];
 }
 
 function hasPlayerWonTheRound(player, computer) {
-    return (
-      (player === "Rock" && computer === "Scissors") ||
-      (player === "Scissors" && computer === "Paper") ||
-      (player === "Paper" && computer === "Rock")
-    );
+  return (
+    (player === "Rock" && computer === "Scissors") ||
+    (player === "Scissors" && computer === "Paper") ||
+    (player === "Paper" && computer === "Rock")
+  );
 }
 
 let playerScore = 0;
@@ -48,4 +48,17 @@ function showResults(userOption) {
     resetGameBtn.style.display = "block";
     optionsContainer.style.display = "none";
   }
-};
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+
+  playerScoreSpanElement.innerText = 0;
+  computerScoreSpanElement.innerText = 0;
+  winnerMsgElement.innerText = "";
+  roundResultsMsg.innerText = "";
+
+  resetGameBtn.styles.display = "none";
+  optionsContainer.styles.display = "block";
+}
